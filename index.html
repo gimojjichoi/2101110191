@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,20 +7,120 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
+    a{
+      text-decoration: none;
+      color: black;
+    }
+    *{
+      margin: 0px;
+      padding: 0px;
+    }
     body{
-      background-color: lightyellow;
+      background-color: green;
+      transition: 0.5s;
     }
     .bgcolor--blue{
-      background-color: lightblue;
+      background-color: white;
+      transition: 0.5s;
+    }
+    .bgcolor--red{
+      background-color: blueviolet;
+      transition: 0.5s;
+    }
+    .bgcolor--green{
+      background-color: lightgreen;
+      transition: 0.5s;
+    }
+    .wrap{
+      /* background-color: red; */
+      margin: 100px auto;
+      width: 650px;
+      height: auto;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    button{
+      cursor: pointer;
+      width: 110px;
+      height: 60px;
+      border: 2px solid black;
+      border-radius: 15px;
+      /* border-style: none; */
+      box-shadow: 2px 2px 3px black;
+      font: normal 16px 'roboto';
+      background-color: white;
+      color: black;
+    } 
+    button:active{
+      transform: scale(95%);
+    }
+    .btn_blue:hover{
+      background-color: lightskyblue;
+      color: black;
+      box-shadow: none;
+    }
+    .btn_red:hover{
+      background-color: lightcoral;
+      color: black;
+      box-shadow: none;
+    }
+    .btn_green:hover{
+      background-color: lightgreen;
+      color: black;
+      box-shadow: none;
+    }
+    .btn_reset:hover{
+      background-color: lightyellow;
+      color: black;
+      box-shadow: none;
     }
   </style>
-  <script src="main.js" defer></script>
 </head>
 <body>
-  <button class="btn_bg">배경색상변경</button>
+  <div class="wrap">
+  <button class="btn_blue">SkyBlue</button>
+  <button class="btn_red">Coral</button>
+  <button class="btn_green">Green</button>
+  <button class="btn_reset">Reset</button>
+</div>
   <script>
-    const btnBg = document.querySelector('.btn_bg');
-    btnBg.addEventListener('click', function () {document.body.classList.toggle('bgcolor--blue');})
+    const btnBlue = document.querySelector('.btn_blue');
+    btnBlue.addEventListener('click', function () {
+      document.body.classList.toggle('bgcolor--blue');});
+
+      btnBlue.addEventListener('click', function(){
+        document.body.classList.remove('bgcolor--red');
+      })
+      btnBlue.addEventListener('click', function(){
+        document.body.classList.remove('bgcolor--green');
+      })
+
+    const btnRed = document.querySelector('.btn_red');
+    btnRed.addEventListener('click', function () {
+      document.body.classList.toggle('bgcolor--red');});
+
+      btnRed.addEventListener('click', function(){
+        document.body.classList.remove('bgcolor--blue');
+      })
+      btnRed.addEventListener('click', function(){
+        document.body.classList.remove('bgcolor--green');
+      })
+
+    const btnGreen = document.querySelector('.btn_green');
+    btnGreen.addEventListener('click', function () {
+      document.body.classList.toggle('bgcolor--green');});
+
+      btnGreen.addEventListener('click', function(){
+        document.body.classList.remove('bgcolor--blue');
+      })
+      btnGreen.addEventListener('click', function(){
+        document.body.classList.remove('bgcolor--red');
+      })
+
+    const btnReset = document.querySelector('.btn_reset');
+    btnReset.addEventListener('click', function () {document.body.classList.remove('bgcolor--blue', 'bgcolor--red', 'bgcolor--green');});
   </script>
 </body>
 </html>
