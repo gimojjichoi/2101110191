@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,121 +5,115 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <style>
-    a{
-      text-decoration: none;
-      color: black;
-    }
-    *{
-      margin: 0px;
-      padding: 0px;
-    }
-    body{
-      background-color: green;
-      transition: 0.5s;
-    }
-    .bgcolor--blue{
-      background-color: white;
-      transition: 0.5s;
-    }
-    .bgcolor--red{
-      background-color: blueviolet;
-      transition: 0.5s;
-    }
-    .bgcolor--green{
-      background-color: lightgreen;
-      transition: 0.5s;
-    }
-    .wrap{
-      /* background-color: red; */
-      margin: 100px auto;
-      width: 650px;
-      height: auto;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-    button{
-      cursor: pointer;
-      width: 110px;
-      height: 60px;
-      border: 2px solid black;
-      border-radius: 15px;
-      /* border-style: none; */
-      box-shadow: 2px 2px 3px black;
-      font: normal 16px 'roboto';
-      background-color: white;
-      color: black;
-    } 
-    button:active{
-      transform: scale(95%);
-    }
-    .btn_blue:hover{
-      background-color: lightskyblue;
-      color: black;
-      box-shadow: none;
-    }
-    .btn_red:hover{
-      background-color: lightcoral;
-      color: black;
-      box-shadow: none;
-    }
-    .btn_green:hover{
-      background-color: lightgreen;
-      color: black;
-      box-shadow: none;
-    }
-    .btn_reset:hover{
-      background-color: lightyellow;
-      color: black;
-      box-shadow: none;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet">
 </head>
 <body>
-  <div class="wrap">
-  <button class="btn_blue">SkyBlue</button>
-  <button class="btn_red">Coral</button>
-  <button class="btn_green">Green</button>
-  <button class="btn_reset">Reset</button>
-</div>
+  <div class="btns">
+    <div class="container">
+      <div class="btns__menu">
+        <button class="btn home">Home</button>
+        <button class="btn about">About</button>
+        <button class="btn skills">Skills</button>
+        <button class="btn works">Works</button>
+        <button class="btn contact">Contact</button>
+      </div>
+    </div>
+  </div>
+  <section id="home">
+    <div class="wrapper">
+      <h1>home</h1>
+      <h2>Lorem ipsum dolor sit amet.</h2>
+      <h3>Lorem, ipusm dolor sit amet consectetur adipisicing elit. Harum voluptas fuga fugiat aut vel reiciendis </h3>
+    </div>
+  </section>
+  <section id="about">
+    <div class="wrapper">
+      <h1>About</h1>
+      <h2>Lorem ipsum dolor sit amet.</h2>
+      <h3>Lorem, ipusm dolor sit amet consectetur adipisicing elit. Harum voluptas fuga fugiat aut vel reiciendis </h3>
+    </div>
+  </section>
+  <section id="skills">
+    <div class="wrapper">  
+      <h1>Skills</h1>
+      <h2>Lorem ipsum dolor sit amet.</h2>
+      <h3>Lorem, ipusm dolor sit amet consectetur adipisicing elit. Harum voluptas fuga fugiat aut vel reiciendis </h3>
+    </div>
+  </section>
+
+  <section id="works">
+    <div class="wrapper">
+      <h1>Works</h1>
+      <h2>Lorem ipsum dolor sit amet.</h2>
+      <h3>Lorem, ipusm dolor sit amet consectetur adipisicing elit. Harum voluptas fuga fugiat aut vel reiciendis </h3>
+    </div>
+    </section>
+  <section id="contact">
+    <div class="wrapper">
+      <h1>Contact</h1>
+      <h2>Lorem ipsum dolor sit amet.</h2>
+      <h3>Lorem, ipusm dolor sit amet consectetur adipisicing elit. Harum voluptas fuga fugiat aut vel reiciendis </h3>
+    </div>
+  </section>
+  <button class="arrow-up">
+    <span class="material-icons">
+      arrow_upward
+      </span>
+    
+  </button>
   <script>
-    const btnBlue = document.querySelector('.btn_blue');
-    btnBlue.addEventListener('click', function () {
-      document.body.classList.toggle('bgcolor--blue');});
+    const btnHome = document.querySelector('.home');
+    const sectionHome = document.querySelector('#home');
+    btnHome.addEventListener('click', function(){
+      sectionHome.scrollIntoView({behavior:"smooth", block:"center"});
+    })
+    const btnabout= document.querySelector('.about');
+    const sectionabout = document.querySelector('#about');
+    btnabout.addEventListener('click', function(){
+      sectionabout.scrollIntoView({behavior:"smooth", block:"center"});
+    })
+    const btnskills = document.querySelector('.skills');
+    const sectionskills = document.querySelector('#skills');
+    btnskills.addEventListener('click', function(){
+      sectionskills.scrollIntoView({behavior:"smooth", block:"center"});
+    })
+    const btnworks = document.querySelector('.works');
+    const sectionworks = document.querySelector('#works');
+    btnworks.addEventListener('click', function(){
+      sectionworks.scrollIntoView({behavior:"smooth", block:"center"});
+    })
+    const btncontact = document.querySelector('.contact');
+    const sectioncontact = document.querySelector('#contact');
+    btncontact.addEventListener('click', function(){
+      sectioncontact.scrollIntoView({behavior:"smooth", block:"center"});
+    })
 
-      btnBlue.addEventListener('click', function(){
-        document.body.classList.remove('bgcolor--red');
-      })
-      btnBlue.addEventListener('click', function(){
-        document.body.classList.remove('bgcolor--green');
-      })
+    const arrowUP =document.querySelector('.arrow-up');
+    arrowUP.addEventListener('click', function(){
+      sectionHome.scrollIntoView({behavior:"smooth", block:"center"})
+    })
 
-    const btnRed = document.querySelector('.btn_red');
-    btnRed.addEventListener('click', function () {
-      document.body.classList.toggle('bgcolor--red');});
 
-      btnRed.addEventListener('click', function(){
-        document.body.classList.remove('bgcolor--blue');
-      })
-      btnRed.addEventListener('click', function(){
-        document.body.classList.remove('bgcolor--green');
-      })
+    const arrowUp = document.querySelector('.arrow-up');
+    document.addEventListener('scroll', function() {
+      if ( window.scrollY > 300) {
+        arrowUp.classList.add('visible');
+      } else {
+        arrowUp.classList.remove('visible');
+      }
+    })
+    document.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                arrowUp.classList.add('show');
+            } else {
+                arrowUp.classList.remove('show')
+            }
+        })
 
-    const btnGreen = document.querySelector('.btn_green');
-    btnGreen.addEventListener('click', function () {
-      document.body.classList.toggle('bgcolor--green');});
 
-      btnGreen.addEventListener('click', function(){
-        document.body.classList.remove('bgcolor--blue');
-      })
-      btnGreen.addEventListener('click', function(){
-        document.body.classList.remove('bgcolor--red');
-      })
 
-    const btnReset = document.querySelector('.btn_reset');
-    btnReset.addEventListener('click', function () {document.body.classList.remove('bgcolor--blue', 'bgcolor--red', 'bgcolor--green');});
-  </script>
+    </script>
 </body>
 </html>
